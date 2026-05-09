@@ -46,7 +46,7 @@ do_install () {
 	# https://docs.yoctoproject.org/ref-manual/variables.html?highlight=workdir#term-S
 	# See example at https://github.com/cu-ecen-aeld/ecen5013-yocto/blob/ecen5013-hello-world/meta-ecen5013/recipes-ecen5013/ecen5013-hello-world/ecen5013-hello-world_git.bb
   install -d ${D}${bindir}
-  install 0d ${D}${sysconfdir}/init.d
+  install -d ${D}${sysconfdir}/init.d
 
   install -m 0755 ${S}/aesdsocket ${D}${bindir}/
   
