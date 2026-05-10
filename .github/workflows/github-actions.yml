@@ -18,13 +18,10 @@ jobs:
                  ssh-private-key: ${{ secrets.SSH_PRIVATE_KEY }}
           - name: init conf
             run: |
-              LOCAL_CONF="build/conf/local.conf"
-              sed -i '/DL_DIR = /d' $LOCAL_CONF
-              sed -i '/SSTATE_DIR = /d' $LOCAL_CONF
-              sed -i '/INHERIT += "rm_work"/d' $LOCAL_CONF
-              echo 'DL_DIR = "/tmp/yocto_cache/downloads"' >> $LOCAL_CONF 
-              echo 'SSTATE_DIR = "/tmp/yocto_cache/sstate-cache"' >> $LOCAL_CONF 
-              echo 'INHERIT += "rm_work"' >> $LOCAL_CONF 
+              mkdir -p build/conf
+              echo 'DL_DIR = "/tmp/yocto_cache/downloads"' > build/conf/site.conf 
+              echo 'SSTATE_DIR = "/tmp/yocto_cache/sstate-cache"' > build/conf/site.conf 
+              echo 'INHERIT += "rm_work"' > build/conf/site.conf
           - name: Run build
             timeout-minutes: 600
             run: |
