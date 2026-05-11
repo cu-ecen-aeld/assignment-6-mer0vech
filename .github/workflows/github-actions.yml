@@ -8,6 +8,7 @@ on:
 jobs:
       full-test:
         runs-on: self-hosted
+        timeout-minutes: 720
         steps:
           - uses: actions/checkout@v3
             with:
@@ -20,8 +21,8 @@ jobs:
             run: |
               mkdir -p build/conf
               echo 'DL_DIR = "/tmp/yocto_cache/downloads"' > build/conf/site.conf 
-              echo 'SSTATE_DIR = "/tmp/yocto_cache/sstate-cache"' > build/conf/site.conf 
-              echo 'INHERIT += "rm_work"' > build/conf/site.conf
+              echo 'SSTATE_DIR = "/tmp/yocto_cache/sstate-cache"' >> build/conf/site.conf 
+              echo 'INHERIT += "rm_work"' >> build/conf/site.conf
           - name: Run build
             timeout-minutes: 600
             run: |
