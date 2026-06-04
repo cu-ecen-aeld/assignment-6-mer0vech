@@ -26,7 +26,7 @@ inherit update-rc.d
 
 MODULES_INSTALL_TARGET = "install"
 EXTRA_OEMAKE += "KERNELDIR=${STAGING_KERNEL_DIR}"
-EXTRA_OEMAKE += "-C ${STAGING_KERNEL_DIR} M=${S}/misc-modules EXTRA_CFLAGS=-I${S}"
+EXTRA_OEMAKE += "-C ${STAGING_KERNEL_DIR} M=${S}/misc-modules EXTRA_CFLAGS=-I${S}/include"
 
 INITSCRIPT_PACKAGES = "${PN}"
 INITSCRIPT_NAME:${PN} = "misc-modules_init.sh"
