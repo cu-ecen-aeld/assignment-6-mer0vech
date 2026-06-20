@@ -1,6 +1,6 @@
-From c044ee89c126c673ed3a938893ed903b879136b7 Mon Sep 17 00:00:00 2001
+From 270f1f920c5964d33bcdbde4b04293d385849375 Mon Sep 17 00:00:00 2001
 From: mer0vech <alexpopp82@gmail.com>
-Date: Thu, 4 Jun 2026 00:20:16 +0200
+Date: Thu, 4 Jun 2026 20:33:05 +0200
 Subject: [PATCH] ldd3 makefile modified
 
 ---
@@ -8,7 +8,7 @@ Subject: [PATCH] ldd3 makefile modified
  1 file changed, 6 insertions(+), 4 deletions(-)
 
 diff --git a/Makefile b/Makefile
-index 7b08c49..014b0f2 100644
+index 7b08c49..f4cebc1 100644
 --- a/Makefile
 +++ b/Makefile
 @@ -1,8 +1,10 @@
@@ -22,7 +22,10 @@ index 7b08c49..014b0f2 100644
 +#	   pci usb\
 +#	   sbull snull short
 +
-+SUBDIRS = misc-modules scull
++SUBDIRS = scull misc-modules
  
  all: subdirs
  
+-- 
+2.34.1
+
